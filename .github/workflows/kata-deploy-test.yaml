@@ -6,7 +6,7 @@ name: test-kata-deploy
 
 jobs:
   check-comment-and-membership:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     if: |
       github.event.issue.pull_request
       && github.event_name == 'issue_comment'
@@ -35,7 +35,7 @@ jobs:
           fi
 
   build-asset:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     needs: check-comment-and-membership
     strategy:
       matrix:
@@ -72,7 +72,7 @@ jobs:
           if-no-files-found: error
 
   create-kata-tarball:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     needs: build-asset
     steps:
       - uses: actions/checkout@v2
@@ -92,7 +92,7 @@ jobs:
 
   kata-deploy:
     needs: create-kata-tarball
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: get-kata-tarball

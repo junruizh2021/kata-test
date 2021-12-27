@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-asset:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     strategy:
       matrix:
         asset:
@@ -42,7 +42,7 @@ jobs:
           if-no-files-found: error
 
   create-kata-tarball:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     needs: build-asset
     steps:
       - uses: actions/checkout@v2
@@ -62,7 +62,7 @@ jobs:
 
   kata-deploy:
     needs: create-kata-tarball
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: get-kata-tarball
@@ -111,7 +111,7 @@ jobs:
 
   upload-static-tarball:
     needs: kata-deploy
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: download-artifacts
@@ -135,7 +135,7 @@ jobs:
 
   upload-cargo-vendored-tarball:
     needs: upload-static-tarball
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: generate-and-upload-tarball
@@ -152,7 +152,7 @@ jobs:
 
   upload-libseccomp-tarball:
     needs: upload-cargo-vendored-tarball
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: download-and-upload-tarball

@@ -13,7 +13,7 @@ on:
 
 jobs:
   add-new-issues-to-backlog:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     steps:
       - name: Install hub
         run: |

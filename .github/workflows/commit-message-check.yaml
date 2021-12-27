@@ -14,7 +14,7 @@ env:
 
 jobs:
   commit-message-check:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     name: Commit Message Check
     steps:
     - name: Get PR Commits

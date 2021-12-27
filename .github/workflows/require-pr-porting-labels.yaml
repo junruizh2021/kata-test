@@ -17,7 +17,7 @@ on:
 
 jobs:
   check-pr-porting-labels:
-    runs-on: ubuntu-latest
+    runs-on: Dell-Ubuntu
     steps:
       - name: Install hub
         run: |
