@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build-asset:
-    runs-on: ubuntu-latest
+    runs-on: slef-hosted
     strategy:
       matrix:
         asset:
@@ -40,7 +40,7 @@ jobs:
           if-no-files-found: error
 
   create-kata-tarball:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build-asset
     steps:
       - uses: actions/checkout@v2
@@ -59,7 +59,7 @@ jobs:
           path: kata-static.tar.xz
 
   make-kata-tarball:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - name: make kata-tarball
