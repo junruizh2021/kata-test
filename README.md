@@ -17,7 +17,7 @@ standard implementation of lightweight Virtual Machines (VMs) that feel and
 perform like containers, but provide the workload isolation and security
 advantages of VMs.
 
-Insert a line in here
+Insert a line in here.
 
 ## Getting started
 
